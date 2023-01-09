@@ -1,0 +1,516 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: sans-serif;
+}
+.header{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: sticky;
+    top: 0;
+    left: 0;
+    background-color: white;
+    box-shadow: 0 5px 15px rgb(0,0,0,0.6);
+}
+.logo{
+    font-weight: 600;
+    font-size: 30px;
+    margin: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black;
+    cursor: pointer;
+}
+/* here starts night mode icon */
+.switch {
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.2em;
+    height: 1.7em;
+    margin-left: 20px;
+  }
+  
+  /* Hide default HTML checkbox */
+  .switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  /* The slider */
+  .slider {
+    --background: #28096b;
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--background);
+    transition: .5s;
+    border-radius: 30px;
+  }
+  
+  .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.3em;
+    width: 1.3em;
+    border-radius: 50%;
+    left: 10%;
+    bottom: 15%;
+    box-shadow: inset 8px -4px 0px 0px #fff000;
+    background: var(--background);
+    transition: .5s;
+  }
+  
+  input:checked + .slider {
+    background-color: rgb(182, 96, 10);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(100%);
+    box-shadow: inset 15px -4px 0px 15px #fff000;
+  }
+/* night mode icon ends */
+#check1{
+    margin-left: 40px;
+}
+.bar {
+    float: right;
+    position: relative;
+    cursor: pointer;
+    width: 49px;
+    height: 34px;
+    display: none;
+    line-height: 73px;  
+  }
+#check{
+    display: none;
+}
+.barColor{
+    position: absolute;
+    width: 30px;
+    height: 5px;
+    background-color: #000000;
+    border-radius: 100px;
+    display: inline-block;
+    transition: 0.3s ease;
+    left: 0;
+}
+.bar span:hover{
+    background: blueviolet;
+}
+  
+.bar span.top {
+    top: 7px;
+}
+  
+.bar span.middle {
+    top: 16px;
+}
+  
+.bar span.bottom {
+    bottom: 4px;
+}
+  
+input[type]:checked ~ span.top {
+    transform: rotate(45deg);
+    transform-origin: top left;
+    width: 36px;
+    left: 5px;
+    transform: all .9s;
+}
+  
+input[type]:checked ~ span.bottom {
+    transform: rotate(-45deg);
+    transform-origin: top left;
+    width: 36px;
+    bottom: -4px;
+    box-shadow: 0 0 10px #495057;
+    transform: all .9s;
+}
+  
+input[type]:checked ~ span.middle {
+    transform: translateX(-20px);
+    opacity: 0;
+}
+.header ul {
+    float: right;
+    display: flex;
+    height: 50px;
+    margin-right: 30px;
+}
+.header ul li{
+    padding: 10px 0;
+    margin: 0 20px;
+    height: 50px;
+    font-weight: 600;
+    color: black;
+    font-size: 25px;
+}
+.header ul li:hover{
+    color: blueviolet;
+    cursor: pointer;
+}
+.image-div{
+    margin-top: 20px;
+    width: 100%;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+@keyframes divmove {
+    0%   {margin-top: 30px;}
+    25%  {margin-top: 10px;}
+    50%  {margin-top: 20px;}
+    100% {margin-top: 30px;}
+  }
+.main-image{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+    width: 90%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: divmove 4s linear infinite;
+}
+.main-image img{
+    width:100%;
+    height:100%;
+}
+@keyframes textmove {
+    0%   {right: -100px; color: white;}
+    100% {right: 400px;color: black;}
+  }
+.main-image-text{
+    position: absolute;
+    font-size: 70px;
+    color: rgb(0, 0, 0);
+    font-weight: 600;
+    animation: textmove 1.7s ;
+}
+/* category div starts */
+
+.category-div{
+    margin-top: 40px;
+    height: 200px;
+    width: 100%;
+    /* background-color: #fff000; */
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(6, minmax(10px, 1fr));
+   
+}
+.category-div img{
+    height: 162px;
+    width: 162px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+
+/* category div ends */
+
+
+
+/* content-div starts */
+
+.content-div{
+    margin-top: 50px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+}
+.product{
+    padding: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
+}
+.product-img{
+    width: 100%;
+}
+.product-title{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.whitecolor{
+    padding: 10px;
+}
+h1{
+   font-size: 20px;
+}
+.product-price-cart{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.fa-cart-shopping{
+    font-size: 20px;
+    color: rgb(0, 0, 0);
+    
+}
+.fa-cart-shopping:hover{
+    color: rgb(4, 148, 47);
+}
+/* content-div ends */
+
+/* responsiveness  */
+@media only screen and (max-width:960px)
+{
+    .logo{
+        font-size: 27px;
+    }
+    .header{
+        height: 45px;
+    }
+    .header ul {
+        height: 45px;
+    }
+    .header ul li{
+        height: 45px;
+        font-size: 17px;
+    }
+    @keyframes divmove {
+        0%   {margin-top: 20px;}
+        25%  {margin-top: 5px;}
+        50%  {margin-top: 10px;}
+        100% {margin-top: 20px;}
+      }
+    .image-div{
+        margin-top: 23px;
+        height: 60vh;
+    }
+    .main-image-text{
+        font-size: 50px;
+    }
+    @keyframes textmove {
+        0%   {right: -100px; color: white;}
+        100% {right: 300px;color: black;}
+      }
+    .category-div{
+        margin-top: 30px;
+        height: 130px;
+    }
+    .category-div img{
+        height: 143px;
+        width: 143px;
+    }
+}
+@media only screen and (max-width:850px)
+{
+    .logo{
+        font-size: 23px;
+    }
+    .header{
+        height: 40px;
+    }
+    .header ul {
+        height: 40px;
+    }
+    .header ul li{
+        height: 40px;
+        font-size: 15px;
+    }
+    @keyframes divmove {
+        0%   {margin-top: 20px;}
+        25%  {margin-top: 5px;}
+        50%  {margin-top: 10px;}
+        100% {margin-top: 20px;}
+      }
+    .image-div{
+        margin-top: 30px;
+        height: 45vh;
+    }
+    .main-image-text{
+        font-size: 45px;
+    }
+    @keyframes textmove {
+        0%   {right: -100px; color: white;}
+        100% {right: 250px;color: black;}
+      }
+      .category-div{
+        margin-top: 40px;
+        height: 100px;
+    }
+    .category-div img{
+        height: 130px;
+        width: 130px;
+    }
+}
+@media only screen and (max-width:650px)
+{
+    .logo{
+        font-size: 18px;
+    }
+    .header{
+        height: 35px;
+    }
+    .header ul {
+        height: 35px;
+    }
+    .header ul li{
+        height: 35px;
+        font-size: 12px;
+    }
+    @keyframes divmove {
+        0%   {margin-top: 20px;}
+        25%  {margin-top: 5px;}
+        50%  {margin-top: 10px;}
+        100% {margin-top: 20px;}
+      }
+    .image-div{
+        margin-top: 20px;
+        height: 35vh;
+    }
+    .main-image-text{
+        font-size: 35px;
+    }
+    @keyframes textmove {
+        0%   {right: -100px; color: white;}
+        100% {right: 190px;color: black;}
+    }
+    .category-div{
+        margin-top: 30px;
+        height: 90px;
+    }
+    .category-div img{
+        height: 100px;
+        width: 100px;
+    }
+}
+@media only screen and (max-width:550px)
+{
+    .header{
+        height: 35px;
+    }
+    .header ul{
+        position: fixed;
+        flex-direction: column;
+        width: 38%;
+        align-items: unset;
+        justify-content: unset;
+        height: 80vh;
+        background-color: white;
+        left: 152%;
+        top: 0px;
+        margin-left: 75px;
+        transform: all .9s;
+        padding: 0px 20px;
+    }
+    .header ul li{
+        margin-top: 40px;
+    height: 40px;
+    padding-top: 16px;
+    font-size: 17px;
+    width: 300px;
+    }
+    @keyframes divmove {
+        0%   {margin-top: 20px;}
+        100% {margin-top: 20px;}
+      }
+    .image-div{
+        margin-top: 30px;
+        height: 20vh;
+    }
+    .main-image-text{
+        font-size: 25px;
+    }
+    @keyframes textmove {
+        0%   {right: -100px; color: white;}
+        100% {right: 104px;color: black;}
+      }
+      .bar {
+        display: block;
+      }
+      .category-div{
+        margin-top: 50px;
+        height: 70px;
+    }
+      .category-div img{
+        height: 79px;
+    width: 79px;
+    }
+    .slider:before {
+        height: 1.1em;
+        width: 1.1em;
+        left: 11%;
+        bottom: 6%;
+      }
+      .switch {
+        width: 2.5em;
+        height: 1.2em;
+      }
+}
+@media only screen and (max-width:450px)
+{
+    .header{
+        height: 35px;
+    }
+    .header ul{
+        position: fixed;
+        flex-direction: column;
+        width: 38%;
+        align-items: unset;
+        justify-content: unset;
+        height: 80vh;
+        background-color: white;
+        left: 152%;
+        top: 0px;
+        margin-left: 75px;
+        transform: all .9s;
+        padding: 0px 20px;
+    }
+    .header ul li{
+        margin-top: 40px;
+    height: 40px;
+    padding-top: 16px;
+    font-size: 17px;
+    width: 300px;
+    }
+    @keyframes divmove {
+        0%   {margin-top: 20px;}
+        100% {margin-top: 20px;}
+      }
+    .image-div{
+        margin-top: 10px;
+        height: 20vh;
+    }
+    .main-image-text{
+        font-size: 25px;
+    }
+    @keyframes textmove {
+        0%   {right: -100px; color: white;}
+        100% {right: 104px;color: black;}
+      }
+      .bar {
+        display: block;
+      }
+      .category-div{
+        margin-top: 30px;
+        height: 70px;
+    }
+      .category-div img{
+        height: 66px;
+    width: 57px;
+    }
+    .slider:before {
+        height: 1.1em;
+        width: 1.1em;
+        left: 11%;
+        bottom: 6%;
+      }
+      .switch {
+        width: 2.5em;
+        height: 1.2em;
+      }
+}
+/* responsiveness ends */
