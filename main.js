@@ -1,3 +1,12 @@
+setTimeout(loading,5000);
+function loading()
+{
+    const loading_page = document.querySelector(".container");
+    const loader = document.querySelector(".container loader")
+    loading_page.style.display = "none";
+    loader.style.display = "none";
+
+}
 window.addEventListener("scroll",function(){
 
     let head = document.querySelector(".header");
@@ -6,7 +15,6 @@ window.addEventListener("scroll",function(){
     }
     else
     head.style.position = "sticky";
-
 });
 function push(){
     if(document.getElementById("check").checked)
@@ -127,7 +135,7 @@ document.addEventListener("DOMContentLoaded",function()
          let response = await data.json();
 
          console.log(response);
-        for(let i = 0;i<response.length;i++)
+        for(let i = 0;i<response.length/3;i++)
         {
             product.innerHTML += `
         <div class="product">
