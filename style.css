@@ -6,6 +6,9 @@
     list-style: none;
     font-family: sans-serif;
 }
+body{
+    overflow-x: hidden;
+}
 .header{
     width: 100%;
     height: 50px;
@@ -235,7 +238,7 @@ input[type]:checked ~ span.middle {
     gap: 30px;
 }
 .product{
-    height: 385px;
+    height: 353px;
     padding: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.7);
 }
@@ -247,7 +250,7 @@ input[type]:checked ~ span.middle {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 .whitecolor{
-    padding: 10px;
+    padding: 7px;
 }
 h1{
    font-size: 20px;
@@ -516,5 +519,16 @@ h1{
         width: 2.5em;
         height: 1.2em;
       }
+      .content-div{
+        grid-template-columns: repeat(auto-fit,minmax(154px,1fr));
+        gap: 15px;
+     }
+     .product-img{
+        height: 46%;
+        width: 100%;
+    }
+    .product{
+        height: 255px;
+    }
 }
 /* responsiveness ends */
