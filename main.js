@@ -4,8 +4,7 @@ function loading()
     const loading_page = document.querySelector(".container");
     const loader = document.querySelector(".container loader")
     loading_page.style.display = "none";
-    loader.style.display = "none";
-
+    // loader.style.display = "none";
 }
 window.addEventListener("scroll",function(){
 
@@ -130,26 +129,47 @@ function changeColor(){
 document.addEventListener("DOMContentLoaded",function()
 {
     let product = document.querySelector(".content-div");
-    async function fetchApi(url){
-         let data = await fetch(url);
-         let response = await data.json();
+    // async function fetchApi(url){
+    //      let data = await fetch(url);
+    //      let response = await data.json();
 
-         console.log(response);
-        for(let i = 0;i<response.length/3;i++)
+    //      console.log(response);
+    //     for(let i = 0;i<response.length;i++)
+    //     {
+    //         product.innerHTML += `
+    //     <div class="product">
+    //     <img src="${response[i].image}" class="product-img">
+    //     <h1 class="product-title whitecolor">${response[i].title}</h1>
+    //     <h4 class="product-category whitecolor">${response[i].category.name}</h4>
+    //     <div class="product-price-cart">
+    //         <h3 class="product-price whitecolor">$${response[i].price}</h3>
+    //         <i class="fa fa-solid fa-cart-shopping"></i>
+    //     </div>
+    // </div>
+    // //     `;
+    //     }
+        
+    // };
+    // fetchApi("https://api.escuelajs.co/api/v1/products");
+    // API WEBSITE :  https://fakestoreapi.com/docs
+    let url = `https://fakestoreapi.com/products`;
+    console.log(url);
+    fetch(url).then(res => res.json()).then(data => {
+        console.log(data);
+        for(let i = 0;i<data.length;i++)
         {
             product.innerHTML += `
         <div class="product">
-        <img src="${response[i].images[1]}" class="product-img">
-        <h1 class="product-title whitecolor">${response[i].title}</h1>
-        <h4 class="product-category whitecolor">${response[i].category.name}</h4>
+        <img src="${data[i].image}" class="product-img">
+        <h1 class="product-title whitecolor">${data[i].title.length > 33 ? data[i].title.substring(0,15).concat(' ... '):data[i].title}</h1>
+        <h4 class="product-category whitecolor">${data[i].category}</h4>
         <div class="product-price-cart">
-            <h3 class="product-price whitecolor">$${response[i].price}</h3>
+            <h3 class="product-price whitecolor">$${data[i].price}</h3>
             <i class="fa fa-solid fa-cart-shopping"></i>
         </div>
     </div>
         `;
-        }
-        
-    };
-    fetchApi("https://api.escuelajs.co/api/v1/products");
+       }
+    })
+    
 });
