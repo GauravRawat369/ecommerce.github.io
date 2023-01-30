@@ -1,10 +1,9 @@
-setTimeout(loading,5000);
-function loading()
+setTimeout(Loaded,5000);
+function Loaded()
 {
     const loading_page = document.querySelector(".container");
     const loader = document.querySelector(".container loader")
     loading_page.style.display = "none";
-    // loader.style.display = "none";
 }
 window.addEventListener("scroll",function(){
 
@@ -161,7 +160,7 @@ document.addEventListener("DOMContentLoaded",function()
             product.innerHTML += `
         <div class="product">
         <img src="${data[i].image}" class="product-img">
-        <h1 class="product-title whitecolor">${data[i].title.length > 33 ? data[i].title.substring(0,15).concat(' ... '):data[i].title}</h1>
+        <h1 class="product-title whitecolor">${data[i].title.length > 23? data[i].title.substring(0,15).concat(' ... '):data[i].title}</h1>
         <h4 class="product-category whitecolor">${data[i].category}</h4>
         <div class="product-price-cart">
             <h3 class="product-price whitecolor">$${data[i].price}</h3>

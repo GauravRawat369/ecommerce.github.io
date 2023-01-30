@@ -235,7 +235,8 @@ input[type]:checked ~ span.middle {
     width: 100%;
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-    gap: 30px;
+    gap: 20px;
+    padding: 10px;
 }
 .product{
     height: 353px;
